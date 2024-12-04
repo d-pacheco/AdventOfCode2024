@@ -4,11 +4,12 @@ import os
 from util import get_input, check_stars, write_stars
 
 class AOC:
-    def __init__(self, year, day, sample_input = None, expected_part1 = None, expected_part2 = None):
+    def __init__(self, year, day, sample_input1 = None, expected_part1 = None, sample_input2 = None, expected_part2 = None):
         self.year = year
         self.day = day
-        self.sample_input = sample_input
+        self.sample_input1 = sample_input1
         self.expected_part1 = expected_part1
+        self.sample_input2 = sample_input1 if sample_input2 is None else sample_input2
         self.expected_part2 = expected_part2
 
     def part1(self, data: str) -> any:
@@ -46,8 +47,8 @@ class AOC:
         stars = check_stars()
 
         try:
-            if self.sample_input is not None and self.expected_part1 is not None:
-                part1_sample_answer = self.part1(self.sample_input)
+            if self.sample_input1 is not None and self.expected_part1 is not None:
+                part1_sample_answer = self.part1(self.sample_input1)
                 if part1_sample_answer == self.expected_part1:
                     print("✅ Part 1 passed sample input ✅")
                 else:
@@ -63,8 +64,8 @@ class AOC:
             print("⚠️ Part 1 not implemented... Skipping... ⚠️")
 
         try:
-            if self.sample_input is not None and self.expected_part2 is not None:
-                part2_sample_answer = self.part2(self.sample_input)
+            if self.sample_input2 is not None and self.expected_part2 is not None:
+                part2_sample_answer = self.part2(self.sample_input2)
                 if part2_sample_answer == self.expected_part2:
                     print("✅ Part 2 passed sample input ✅")
                 else:

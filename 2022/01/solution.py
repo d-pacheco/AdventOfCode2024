@@ -54,7 +54,7 @@ expected_part2 = 45000
 Day01(
     year=2022,
     day=1,
-    sample_input=sample_input,
+    sample_input1=sample_input,
     expected_part1=expected_part1,
     expected_part2=expected_part2
 ).run()
