@@ -7,22 +7,26 @@ class Day02(AOC):
         for report in data_list:
             reports.append(report.split())
 
-        is_safe = False
-        count = 0
-        for report in reports:
+        def check_is_safe(report_to_check):
             differences = [abs(int(report[i]) - int(report[i + 1])) for i in range(len(report) - 1)]
             if not all(1 <= diff <= 3 for diff in differences):
-                is_safe = False
+                return False
 
             increasing = all(report[i] < report[i + 1] for i in range(len(report) - 1))
             decreasing = all(report[i] > report[i + 1] for i in range(len(report) - 1))
 
-            is_safe = increasing or decreasing
+            return increasing or decreasing
 
-            if is_safe:
+
+
+        count = 0
+        for report in reports:
+            if check_is_safe(report):
                 count += 1
+            else:
+                pass
 
-            return count
+        return count
 
 
     def part2(self, data) -> any:
