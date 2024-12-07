@@ -4,7 +4,7 @@ import requests
 
 def main():
     year = 2024
-    day = 6
+    day = 7
     download_input(year, day)
     create_solution_file(year, day)
     create_file(year, day, "stars.txt")
